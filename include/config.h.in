@@ -1,0 +1,60 @@
+//////////////////////////////////////////////////////////////////////////////
+//  Copyright (C) 2013 by sanpolo CO.LTD                                    //
+//                                                                          //
+//  This file is part of WIDE                                               //
+//                                                                          //
+//  You should have received a copy of the MIT LIcense along with this     //
+//  program.  If not, see <http://www.wware.org/wide/license.html>.         //
+//                                                                          //
+//  WIDE website: http://www.wware.org/                                     //
+//////////////////////////////////////////////////////////////////////////////
+
+#ifndef WIDE_CONFIG_H
+#define WIDE_CONFIG_H
+
+// The configured options and settings for wide
+
+#define WIDE_VERSION_MAJOR "@WIDE_VERSION_MAJOR@"
+#define WIDE_VERSION_MINOR "@WIDE_VERSION_MINOR@"
+
+
+///////////////////////////////////
+//Platform Relative Macro
+///////////////////////////////////
+/*OS_LINUX*/
+#cmakedefine OS_LINUX
+/*OS_WIN*/
+#cmakedefine OS_WIN
+/*OS_APPLE*/
+#cmakedefine OS_APPLE
+
+
+///////////////////////////////////
+//Build Type(Release or Debug) Macro
+///////////////////////////////////
+/* Debugging flag */
+#cmakedefine DEBUG
+/* no debugging */
+#cmakedefine NDEBUG
+
+///////////////////////////////////
+//Window system library Macro.
+///////////////////////////////////
+/*GTK*/
+#cmakedefine USE_GTK
+/*X11*/
+#cmakedefine USE_X11
+
+
+//#ifdef  WIN32
+#define DECLARE_WXCONVERT           wxMBConvUTF8	wide_wx_utf8_conv
+#define wideWXT(s)                   wxString(__(s),wide_wx_utf8_conv)
+//#else
+//
+//#define DECLARE_WXCONVERT
+//#define gmeWXT(s)                   __(s)
+//
+//#endif
+
+
+#endif	/* WIDE_CONFIG_H */
